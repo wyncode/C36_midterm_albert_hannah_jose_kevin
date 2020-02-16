@@ -1,15 +1,20 @@
 /* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
 
-/* #demo {
-  width: 100vw;
+#background-img {
+  background-repeat: no-repeat;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-size: cover;
+  background-image: url(./images/home.jpg);
 }
 
-#demo h1 {
-  display: grid;
-  place-items: center;
-} */
+#header-home {
+  font-family: galada;
+}
 
 /* END DEMO */
+
+
+
+
+
