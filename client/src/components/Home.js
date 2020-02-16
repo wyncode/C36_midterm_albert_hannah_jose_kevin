@@ -40,14 +40,18 @@ export default function Home() {
   return (
     <>
       <div id="background-img">
-        <h1 style={{ backgroundColor: 'blue', padding: 15 }}>Munchies</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Restaurants"
-            onChange={handleChange}
-          />
-        </form>
+      <div className="search-wrapper">
+        <div className="search-box">
+            <h1>Munchies</h1>
+            <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Restaurants"
+                onChange={handleChange}
+            />
+            </form>
+        </div>
+      </div>
         <div>
           <ul>
             {apiData.map(item => {
