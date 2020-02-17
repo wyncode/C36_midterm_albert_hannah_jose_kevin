@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Result from './Result';
-import { Container, Row } from 'react-bootstrap';
+
 
 export default function Home() {
   /*****************************************************
@@ -10,18 +10,22 @@ export default function Home() {
   const [apiData, setApiData] = useState([]);
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
+  const [location, setLocation] = useState('')
   /*****************************************************
      CALLING API WITH USE EFFECT
      *****************************************************/
-  useEffect(() => {
-    const getApiData = async () => {
-      const result = await axios.get(
-        `http://localhost:8080/api/restaurants/search/miami/${query}`
-      );
-      setApiData(result.data);
-    };
-    getApiData();
-  }, [query]);
+    useEffect(() => {
+        if (query === "") return 
+        if (location === "") return
+        
+      const getApiData = async () => {
+        const result = await axios.get(
+          `/api/restaurants/search/${location}/${query}`
+        );
+        setApiData(result.data);
+      };
+      getApiData();
+    }, [query, location]);
   /***************************************************
        GETTING THE USER INPUT
        ***************************************************/
@@ -33,7 +37,8 @@ export default function Home() {
       ***************************************************/
   const handleSubmit = event => {
     event.preventDefault();
-    setQuery(search);
+    setQuery(search)
+    setLocation(search)
   };
   /***************************************************
        THE ACTION RETURN WITH THE USER INFO

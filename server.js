@@ -30,7 +30,7 @@ app.get('/api/restaurants/search/:location/:term', (request, response) => {
   const { location, term } = request.params
   const locationSearch = location ? `&location=${location}` : '';
   const termSearch = term && term !== 'undefined' ? `&term=${term}` : ''
-  axios.get(`https://api.yelp.com/v3/businesses/search?categories=restaurants${locationSearch}${termSearch}&limit=50`, {
+  axios.get(`https://api.yelp.com/v3/businesses/search?categories=restaurants${locationSearch}${termSearch}&limit=50&open_now=true`, {
     headers: {
       Authorization: `Bearer ${process.env.YELP_API_KEY}`
     }
@@ -39,6 +39,17 @@ app.get('/api/restaurants/search/:location/:term', (request, response) => {
   .catch(err => response.send([]))
 })
 
+
+app.get(`/api/restaurants/:id`, async (request, res) => {
+  const { id } = request.params
+  let { data } = await axios.get(`https://api.yelp.com/v3/businesses/${id}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.YELP_API_KEY}`
+    }
+})
+
+res.send(data)
+})
 
 /*********************************************************
  Here is the END of the BACK-END CODE
