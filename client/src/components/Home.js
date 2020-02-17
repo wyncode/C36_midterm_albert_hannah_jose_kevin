@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Result from './Result';
+import Result from './Result'
+import Title from './Title'
 
 
 export default function Home() {
@@ -45,21 +46,14 @@ export default function Home() {
        ***************************************************/
 
   return (
-    <div>
+    <React.Fragment>
       <div>
-        <navbar id="home-nav">
-          <a href="#local-eats">Local Eats</a>
-          <a href="#restaurant-otm">Restaurant of the Month</a>
-          <a href="#about-us">About Us</a>
-        </navbar>
-      </div>
-      <div className="flex">
-        <div id="header-box">
-          <h1 id="header-home1">LATE NIGHT</h1>
-          <h2 id="header-home2">MUNCHIES</h2>
-        </div>
+        
+      
 
         {apiData.length === 0 ? (
+       <>
+        <Title />
           <div id="background-img">
             <div className="search-box">
               <form onSubmit={handleSubmit}>
@@ -69,8 +63,16 @@ export default function Home() {
                   onChange={handleChange}
                 />
               </form>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="City"
+                  onChange={handleChange}
+                />
+              </form>
             </div>
           </div>
+          </>
         ) : (
           <div>
             <ul>
@@ -88,6 +90,6 @@ export default function Home() {
           </div>
         )}
       </div>
-    </div>
+    </React.Fragment>
   );
 }
