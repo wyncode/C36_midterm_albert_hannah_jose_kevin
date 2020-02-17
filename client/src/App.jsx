@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div id="demo">
-        <h1>Hello from client/src/App.js</h1>
+        <h1>Hello from Team Munchies!/src/App.js</h1>
         <h1>{this.state.serverMessage}</h1>
       </div>
     );
