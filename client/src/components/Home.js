@@ -1,95 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Result from './Result'
-import Title from './Title'
+
+import React from 'react'
+import Title from "./Title"
 
 
-export default function Home() {
-  /*****************************************************
-    SETTING THE HOOK STATE
-    ******************************************************/
-  const [apiData, setApiData] = useState([]);
-  const [query, setQuery] = useState('');
-  const [search, setSearch] = useState('');
-  const [location, setLocation] = useState('')
-  /*****************************************************
-     CALLING API WITH USE EFFECT
-     *****************************************************/
-    useEffect(() => {
-        if (query === "") return 
-        if (location === "") return
-        
-      const getApiData = async () => {
-        const result = await axios.get(
-          `/api/restaurants/search/${location}/${query}`
-        );
-        setApiData(result.data);
-      };
-      getApiData();
-    }, [query, location]);
-  /***************************************************
-       GETTING THE USER INPUT
-       ***************************************************/
-  const handleChange = event => {
-    setSearch(event.target.value);
-  };
-  /***************************************************
-      EDIT THE SEARCH WHEN THE USER SUBMIT
-      ***************************************************/
-  const handleSubmit = event => {
-    event.preventDefault();
-    setQuery(search)
-    setLocation(search)
-  };
-  /***************************************************
-       THE ACTION RETURN WITH THE USER INFO
-       ***************************************************/
 
-  return (
-    <React.Fragment>
-      <div>
-        
-      
+class Home extends React.Component{
+  state = {query: ''}
+  handleInputChange = event => this.setState({ query: event.target.value })
+  handleTermInputChange = event => this.setState({term: event.target.value})
+  handleSearch = event => {
+    event.preventDefault()
+    const { query } = this.state;
 
-        {apiData.length === 0 ? (
-       <>
+    this.props.history.push(`/restaurants/${query}`)
+  }
+  render(){
+    return(
+        <>
         <Title />
           <div id="background-img">
             <div className="search-box">
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  placeholder="Restaurants"
-                  onChange={handleChange}
-                />
-              </form>
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  placeholder="City"
-                  onChange={handleChange}
-                />
-              </form>
+            <form
+          className="home-page-form"
+          onSubmit={this.handleSearch}
+        >
+          <div className="home-search-box">
+            <label
+              className="home-page-label"
+              htmlFor="home-search-id"
+            >
+            <input
+              id="search-box-id"
+              className="home-page-input"
+              name="query"
+              type="text"
+              placeholder="Search a location.."
+              spellCheck="false"
+              autoComplete="off"
+              onChange={this.handleInputChange}
+            />
+        
+               </label>
+          </div>
+        </form>
             </div>
           </div>
           </>
-        ) : (
-          <div>
-            <ul>
-              {apiData.map(item => {
-                return (
-                  <Result
-                    name={item.name}
-                    image={item.image_url}
-                    location={`${item.location.address1} ${item.location.city} ${item.location.zip_code}, ${item.location.state}`}
-                    rating={`${item.rating}, star review.`}
-                  />
-                );
-              })}
-            </ul>
-          </div>
-        )}
-      </div>
-    </React.Fragment>
-  );
+    )
+  }
 }
+export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
