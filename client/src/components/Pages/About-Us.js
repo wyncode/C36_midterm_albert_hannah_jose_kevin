@@ -36,7 +36,7 @@ const About = () => {
           <p className="our-names">Kevin Matthews</p>
           <img src={Kevin} alt="kevin" className="about-pic" />
           <div className="inner-flex">
-            <img src={github} alt="github" className="github-logo" />
+          <a href="https://www.linkedin.com/in/kevin-matthews-0b28b943/"><img src={github} alt="github" className="github-logo" /></a>
             <img src={linkedin} alt="linkedin" className="linkedin-logo" />
           </div>
         </div>
@@ -62,7 +62,7 @@ const About = () => {
           </p>
         </div>
       </span>
-    </React.Fragment >
+    </React.Fragment>
   );
 };
 export default About;
