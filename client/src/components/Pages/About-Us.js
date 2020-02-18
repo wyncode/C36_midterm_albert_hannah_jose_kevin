@@ -18,8 +18,8 @@ const About = () => {
           <p className="our-names">Jose Rangel</p>
           <img src={Jose} alt="jose" className="about-pic" />
           <div className="inner-flex">
-            <img src={github} alt="github" className="github-logo" />
-            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          <a href="https://github.com/josedani08200" target="_blank"> <img src={github} alt="github" className="github-logo" /></a>
+          <a href="https://www.linkedin.com/in/jose-rangel-101b26163/" target="_blank"> <img src={linkedin} alt="linkedin" className="linkedin-logo" /></a> 
           </div>
         </div>
 
@@ -27,8 +27,8 @@ const About = () => {
           <p className="our-names">Hannah Shea</p>
           <img src={Hannah} alt="hannah" className="about-pic" />
           <div className="inner-flex">
-            <img src={github} alt="github" className="github-logo" />
-            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          <a href="https://github.com/hbshea" target="_blank"><img src={github} alt="github" className="github-logo" /></a> 
+          <a href="https://www.linkedin.com/in/hannah-shea-aba22b31/" target="_blank"><img src={linkedin} alt="linkedin" className="linkedin-logo" /></a>
           </div>
         </div>
 
@@ -36,8 +36,8 @@ const About = () => {
           <p className="our-names">Kevin Matthews</p>
           <img src={Kevin} alt="kevin" className="about-pic" />
           <div className="inner-flex">
-          <a href="https://www.linkedin.com/in/kevin-matthews-0b28b943/"><img src={github} alt="github" className="github-logo" /></a>
-            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          <a href="https://github.com/KevinKM3" target="_blank"><img src={github} alt="github" className="github-logo" /></a>
+          <a href="https://www.linkedin.com/in/kevin-matthews-0b28b943/" target="_blank"> <img src={linkedin} alt="linkedin" className="linkedin-logo" /></a> 
           </div>
         </div>
 
@@ -45,23 +45,12 @@ const About = () => {
           <p className="our-names">Albert Diaz</p>
           <img src={Albert} alt="albert" className="about-pic" />
           <div className="inner-flex">
-            <img src={github} alt="github" className="github-logo" />
-            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          <a href="https://github.com/l2albert" target="_blank"><img src={github} alt="github" className="github-logo" /></a>
+          <a href="https://www.linkedin.com/in/albert-diaz-13758819b/" target="_blank"> <img src={linkedin} alt="linkedin" className="linkedin-logo" /></a>
           </div>
         </div>
 
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
-      </div>
-      <div>
-        <p class="our-names">Albert Diaz</p>
-        <img src={Albert} alt="albert" className="about-pic" />
-      </div>
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
-      </div>
+        {/* --> //flex-picture-names// */}
       </div>
       <hr />
       <span className="flex-git-linkedin">
