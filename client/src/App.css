@@ -111,6 +111,12 @@ a {
 .nav-links {
   text-emphasis-color: white;
   /* padding-bottom: 20%; */
+/* This is just a sample change to Green. */
+}
+
+#home-nav a {
+  padding: 20px;
+  color:white;
 }
 
 /* //CSS for About Us// */
