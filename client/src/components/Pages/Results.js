@@ -96,13 +96,13 @@ const Results = () => {
             ))}
           </select>
           <input
-            onChange={handleChangeFilter('alias')}
-            placeholder="Search by name or location"
+            onChange={handleChangeFilter('categories')}
+            placeholder="Search by category"
           />
         </div>
         {/* ternary to show the loader or venues based on loading state */}
         {loading ? (
-          <>loading</>
+          <><h1>loading</h1></>
         ) : (
           <div className="restaurantslist">
             {venues.reduce((acc, venue) => {
