@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
     return ( 
 <  nav id="home-nav">
-    <a href="#local-eats">Local Eats</a>
-    <a href="#restaurant-otm">Restaurant of the Month</a>
-    <a href="#about-us">About Us</a>
+    <Link to="/">Home</Link>
+    <Link to="/restaurants/wynwood">Munchies</Link>
+    <Link to="/about-us">About Us</Link>
   </nav> );
 }
  
