@@ -2,11 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
-    <nav id="home-nav">
-      <Link to="/">Home</Link>
-      <Link to="/restaurants/wynwood">Munchies</Link>
-      <Link to="/about-us">About Us</Link>
-    </nav>
+    <div>
+      <nav class="home-nav">
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+        </div>
+        <div className="nav-links">
+          <Link to="/restaurants/wynwood">Munchies</Link>
+        </div>
+        <div className="nav-links">
+          <Link to="/about-us">About Us</Link>
+        </div>
+      </nav>
+    </div>
   );
 };
 

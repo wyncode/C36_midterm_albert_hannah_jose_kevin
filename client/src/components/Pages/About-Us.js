@@ -8,9 +8,8 @@ import linkedin from '../images/LinkedIn-Logo.png';
 const About = () => {
   return (
     <React.Fragment>
-      <div className="about-us-banner"></div>
-      <div>
-        <p id="team-munchies">Team Munchies</p>
+      <div className="about-us-banner">
+        <p className="team-munchies">Team Munchies</p>
       </div>
       <div className="flex-picture-names">
         <div className="profile-block">
@@ -51,7 +50,21 @@ const About = () => {
 
         {/* --> //flex-picture-names// */}
       </div>
-      <div className="flex-git-linkedin"></div>
+      <hr />
+      <span className="flex-git-linkedin">
+        <div>
+          <p className="about-paragraph">
+            <h1 class="why-munchies">Why Munchies?</h1>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+        </div>
+      </span>
     </React.Fragment>
   );
 };
