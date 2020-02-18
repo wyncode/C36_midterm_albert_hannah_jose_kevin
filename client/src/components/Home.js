@@ -1,28 +1,28 @@
 
-import React from 'react'
+import React, { useState } from 'react'
+import { useRouter } from '../custom_hooks';
 import Title from "./Title"
 
 
+const Home = () => {
+    const [query, setQuery] = useState('');
+    const { history } = useRouter();
 
-class Home extends React.Component{
-  state = {query: ''}
-  handleInputChange = event => this.setState({ query: event.target.value })
-  handleTermInputChange = event => this.setState({term: event.target.value})
-  handleSearch = event => {
-    event.preventDefault()
-    const { query } = this.state;
+    const handleInputChange = e => setQuery(e.target.value);
 
-    this.props.history.push(`/restaurants/${query}`)
-  }
-  render(){
-    return(
+    const handleSearch = e => {
+        e.preventDefault();
+        history.push(`/restaurants/${query}`)
+    }
+
+    return (
         <>
         <Title />
           <div id="background-img">
             <div className="search-box">
             <form
           className="home-page-form"
-          onSubmit={this.handleSearch}
+          onSubmit={handleSearch}
         >
           <div className="home-search-box">
             <label
@@ -37,7 +37,7 @@ class Home extends React.Component{
               placeholder="Search a location.."
               spellCheck="false"
               autoComplete="off"
-              onChange={this.handleInputChange}
+              onChange={handleInputChange}
             />
         
                </label>
@@ -47,8 +47,9 @@ class Home extends React.Component{
           </div>
           </>
     )
-  }
 }
+
+
 export default Home
 
 
