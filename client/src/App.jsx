@@ -10,10 +10,10 @@ export default function App() {
   return(
     <Router>
       <NavBar />
-      <About />
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/restaurants/:location/:term?" component={Results}/>
+        <Route exact path="/about-us" component={About} />
       </Switch>
     </Router>
   )
