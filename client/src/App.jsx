@@ -5,7 +5,6 @@ import Home from './components/Home';
 import NavBar from './components/NavBar'
 import Results from './components/Results'
 
-
 export default function App() {
   return(
     <Router>

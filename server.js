@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 ***********************************************************/
 
 
-app.get('/api/restaurants/search/:location/:term', (request, response) => {
+app.get('/api/restaurants/search/:location/:term?', (request, response) => {
   const { location, term } = request.params
   const locationSearch = location ? `&location=${location}` : '';
   const termSearch = term && term !== 'undefined' ? `&term=${term}` : ''
