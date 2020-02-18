@@ -13,7 +13,14 @@ const Results = () => {
     const [venues, setVenues] = useState([]);
     const [filters, setFilters] = useState({})
 
-    const handleChangeFilter = (filterType, isNumber) => e => setFilters({ ...filters, [filterType]: isNumber ? Number(e.target.value) : e.target.value })
+    const handleChangeFilter = (filterType, isNumber) => e => {
+      const value = isNumber ? Number(e.target.value) : e.target.value;
+      if (value) return setFilters({ ...filters, [filterType]: value })
+    
+      const newFilters = { ...filters };
+      delete newFilters[filterType];
+      return setFilters(newFilters)
+    }
 
     const fetchPlaces = () => {
         if (!location) return;
