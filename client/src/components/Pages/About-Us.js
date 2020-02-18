@@ -50,7 +50,18 @@ const About = () => {
           </div>
         </div>
 
-        {/* --> //flex-picture-names// */}
+      <div>
+        <img src={github} alt="github" className="github-logo" />
+        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+      </div>
+      <div>
+        <p class="our-names">Albert Diaz</p>
+        <img src={Albert} alt="albert" className="about-pic" />
+      </div>
+      <div>
+        <img src={github} alt="github" className="github-logo" />
+        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+      </div>
       </div>
       <hr />
       <span className="flex-git-linkedin">
