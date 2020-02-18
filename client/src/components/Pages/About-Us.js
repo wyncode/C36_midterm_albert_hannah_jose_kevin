@@ -8,39 +8,50 @@ import linkedin from '../images/LinkedIn-Logo.png';
 const About = () => {
   return (
     <React.Fragment>
-      <h1>About Us</h1>
+      <div className="about-us-banner"></div>
       <div>
-        <p class="our-names">Jose Rangel</p>
-        <img src={Jose} alt="jose" className="about-pic" />
+        <p id="team-munchies">Team Munchies</p>
       </div>
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+      <div className="flex-picture-names">
+        <div className="profile-block">
+          <p className="our-names">Jose Rangel</p>
+          <img src={Jose} alt="jose" className="about-pic" />
+          <div className="inner-flex">
+            <img src={github} alt="github" className="github-logo" />
+            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          </div>
+        </div>
+
+        <div className="profile-block">
+          <p className="our-names">Hannah Shea</p>
+          <img src={Hannah} alt="hannah" className="about-pic" />
+          <div className="inner-flex">
+            <img src={github} alt="github" className="github-logo" />
+            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          </div>
+        </div>
+
+        <div className="profile-block">
+          <p className="our-names">Kevin Matthews</p>
+          <img src={Kevin} alt="kevin" className="about-pic" />
+          <div className="inner-flex">
+            <img src={github} alt="github" className="github-logo" />
+            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          </div>
+        </div>
+
+        <div className="profile-block">
+          <p className="our-names">Albert Diaz</p>
+          <img src={Albert} alt="albert" className="about-pic" />
+          <div className="inner-flex">
+            <img src={github} alt="github" className="github-logo" />
+            <img src={linkedin} alt="linkedin" className="linkedin-logo" />
+          </div>
+        </div>
+
+        {/* --> //flex-picture-names// */}
       </div>
-      <div>
-        <p class="our-names">Hannah Shea</p>
-        <img src={Hannah} alt="hannah" className="about-pic" />
-      </div>
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
-      </div>
-      <div>
-        <p class="our-names">Kevin Matthews</p>
-        <img src={Kevin} alt="kevin" className="about-pic" />
-      </div>
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
-      </div>
-      <div>
-        <p class="our-names">Albert Diaz</p>
-        <img src={Albert} alt="albert" className="about-pic" />
-      </div>
-      <div>
-        <img src={github} alt="github" className="github-logo" />
-        <img src={linkedin} alt="linkedin" className="linkedin-logo" />
-      </div>
+      <div className="flex-git-linkedin"></div>
     </React.Fragment>
   );
 };
