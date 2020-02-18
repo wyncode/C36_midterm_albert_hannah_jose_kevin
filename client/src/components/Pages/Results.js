@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useRouter } from '../../custom_hooks';
-import { Link } from 'react-router-dom';
+
 /*****************************
  CONSTANTS
  *****************************/
-const prices = ['$', '$$', '$$$'];
-const ratings = [1, 2, 3, 4, 5];
+const prices = ['$', '$$', '$$$', '$$$$', '$$$$$'];
+const ratings = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+
 /*****************************
  HOOKS
  *****************************/
