@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import { useRouter } from '../custom_hooks';
+import { useRouter } from '../../custom_hooks';
 
 const Results = () => {
     const { params } = useRouter();
