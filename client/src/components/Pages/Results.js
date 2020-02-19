@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useRouter } from '../../custom_hooks';
 import { Link } from 'react-router-dom';
@@ -36,14 +36,14 @@ const Results = () => {
   /****************************************
    FETCHING FORM THE API AND SETTING STATE
    ****************************************/
-  const fetchPlaces = () => {
+  const fetchPlaces = useCallback(() => {
     if (!location) return;
     const url = `/api/restaurants/search/${location}`;
     axios.get(url).then(response => {
       setVenues(response.data);
       setLoading(false);
     });
-  };
+  }, [location]);
 
   const checkFilters = (filterKeys, venue) =>
     filterKeys.every(key => {
@@ -69,7 +69,7 @@ const Results = () => {
    ********************************************/
   useEffect(() => {
     fetchPlaces();
-  }, []);
+  }, [fetchPlaces]);
 
   return (
     <>
