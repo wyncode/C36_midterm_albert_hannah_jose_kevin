@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReadMe
 
-## Available Scripts
+What is the Munchies App?
 
-In the project directory, you can run:
+THE MUNCHIES APP IS WHERE YOU GO TO FIND LATE NIGHT FOOD QUICKLY!
 
-### `npm start`
+The Munchies Restaurant Finder is an open source application built using React.js. It is written entirely using React, HTML, CSS, and JavaScript, and runs on numerous platforms.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+What is The Munchies App and who will use it?
+This App is for those who are craving a late night bite to eat. 
+The search function allows users to enter their location and find nearby restaurants.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+Check out a video of it in action at:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features:
+The application has been written in modern React, only functional components with hooks.
+CSS was used to style
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+The code is organized into the following structure: (This WILL BE EDITED BASED ON WHAT FILES WE MERGE)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Src  – This folder contains fonts, images, and CSS styles used within the application.
+pages –  This folder contains all of our JavaScript resources and libraries used within the application.
 
-### `npm run eject`
+The Fresh Food Finder uses:
+The Yelp API
+Bootstrap
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Built With:
+Written in modern React, only functional components with hooks.
+The Yelp Fusion API provides access to the industry leading Yelp content and data. T
+All data obtained through: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Authors:
+Hannah Shea 
+Jose Rangel
+Kevin Matthews
+Albert Diaz
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+License
+If something doesn’t work, please file an issue and a member of our team will respond.
+This project is licensed under the MIT License - see the LICENSE.md file for details
