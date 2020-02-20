@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -18,7 +17,6 @@ if (process.env.NODE_ENV === 'production') {
     response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
-
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 /********************************************************** 
    Here is the BACK-END CODE
@@ -90,7 +88,6 @@ app.get(`/api/restaurants/:id/reviews/`, async (request, response) => {
    *********************************************************/
 
 // END DEMO
-
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`API listening on port ${port}...`);

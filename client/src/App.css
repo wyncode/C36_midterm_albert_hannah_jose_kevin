@@ -53,6 +53,11 @@
 .search-box h1 {
   color: white;
 }
+.is-active{
+
+color:  yellow !important; 
+
+}
 
 #home-nav {
   display: flex;
