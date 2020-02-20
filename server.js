@@ -9,14 +9,6 @@ const axios = require('axios');
 
 app.use(cors());
 
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  // Handle React routing, return all requests to React app
-  app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-}
 // JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
 /********************************************************** 
    Here is the BACK-END CODE
@@ -83,6 +75,14 @@ app.get(`/api/restaurants/:id/reviews/`, async (request, response) => {
   response.send(data);
 });
 
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 /*********************************************************
    Here is the END of the BACK-END CODE
    *********************************************************/
