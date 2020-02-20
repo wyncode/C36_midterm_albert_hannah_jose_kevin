@@ -88,7 +88,7 @@ const Results = () => {
         <div className="filters">
           <h3>Filters</h3>
           <select onChange={handleChangeFilter('price')}>
-            <option value={null}></option>
+            <option value="" selected>price</option>
             {prices.map((price, index) => (
               <option key={index} value={price}>
                 {price}
@@ -96,7 +96,7 @@ const Results = () => {
             ))}
           </select>
           <select onChange={handleChangeFilter('rating', true)}>
-            <option value={null}></option>
+            <option value="" selected>rating</option>
             {ratings.map((rating, index) => (
               <option key={index} value={rating}>
                 {rating}
@@ -112,66 +112,67 @@ const Results = () => {
         {loading ? (
           <img src={logo} alt="logo" />
         ) : (
-          <div className="restaurantslist">
-            <CardDeck style={{justifyContent: 'center'}}>
-              {venues.reduce((acc, venue) => {
-                const filterKeys = Object.keys(filters); // returns array of keys i,e ['alias', 'price' ,'rating']
-                if (filterKeys.length) {
-                  // determine if there is at least one filter active
-                  const isValid = checkFilters(filterKeys, venue); //if there is an active filter then we run our checkFilter
-                  if (!isValid) return acc; // if it does not pass the check we stop the function by return the acc array
-                }
-                //if it passes validation or there were no filter at all we append to our acc
-                acc.push(
-                  <Link to={`/restaurant/${venue.id}`} key={venue.id}>
-                    <Card
-                      as="ul"
-                      border="primary"
-                      bg="dark"
-                      text="white"
-                      style={{ width: '25rem', height: '25rem', margin: 10, padding: 20,  justifyContent: 'center', backgroundPosition: 'center' }}
-                    >
-                      <Card.Title><h3>{venue.name}</h3></Card.Title>
-                      <Card.Subtitle>
-                    
-                        <Rater rating={venue.rating} onRating={venue.rating}/>
-                        {venue.rating}
-                        
-                     
+            <div className="restaurantslist">
+              <CardDeck style={{ justifyContent: 'center' }}>
+                {venues.reduce((acc, venue) => {
+                  const filterKeys = Object.keys(filters); // returns array of keys i,e ['alias', 'price' ,'rating']
+                  if (filterKeys.length) {
+                    // determine if there is at least one filter active
+                    const isValid = checkFilters(filterKeys, venue); //if there is an active filter then we run our checkFilter
+                    if (!isValid) return acc; // if it does not pass the check we stop the function by return the acc array
+                  }
+                  //if it passes validation or there were no filter at all we append to our acc
+                  acc.push(
+                    <Link to={`/restaurant/${venue.id}`} key={venue.id}>
+                      <Card
+                        as="ul"
+                        border="primary"
+                        bg="dark"
+                        text="white"
+                        style={{ width: '25rem', height: '25rem', margin: 10, padding: 20, justifyContent: 'center', backgroundPosition: 'center' }}
+                      >
+                        <Card.Title><h3>{venue.name}</h3></Card.Title>
+                        <Card.Subtitle>
+
+                          <Rater rating={venue.rating} onRating={venue.rating} />
+                          {venue.rating}
+
+
                         </Card.Subtitle>
-                      {/*
+                        {/*
 
                       <Card.Img variant="top" 
                           src={venue.image_url}
                         alt={venue.name}/>*/}
 
-                      <div
-                        className="card-image"
-                        style={{
-                          backgroundImage: `url(${venue.image_url})`,
-                          backgroundPosition: 'center',
-                          backgroundSize: 'cover',
-                          width: '100%',
-                          height: '12rem'
-                        }}
-                      ></div>
+                        <div
+                          className="card-image"
+                          style={{
+                            backgroundImage: `url(${venue.image_url})`,
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            width: '100%',
+                            height: '12rem'
+                          }}
+                        ></div>
 
-                      <Card.Body>
-                        <Card.Title>
-                          {venue.location.display_address.join(' ')}
-                        </Card.Title>
-                        <Button variant="primary">Restaurant Details</Button>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                );
-                return acc;
-              }, [])}
-            </CardDeck>
-          </div>
-        )}
+                        <Card.Body>
+                          <Card.Title>
+                            {venue.location.display_address.join(' ')}
+                          </Card.Title>
+                          <Button variant="primary">Restaurant Details</Button>
+                        </Card.Body>
+                      </Card>
+                    </Link>
+                  );
+                  return acc;
+                }, [])}
+              </CardDeck>
+            </div>
+          )}
       </React.Fragment>
     </>
   );
 };
+
 export default Results;

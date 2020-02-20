@@ -37,19 +37,19 @@
   /* width: 100%; */
 }
 
-*/ .search-wrapper {
+/* .search-wrapper {
   display: grid;
   place-items: center;
   height: 100vh;
-}
+} */
 .search-box {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   position: absolute;
   left: 0;
   right: 0;
   margin-top: 600px;
-  /* border-radius: 50px; */
+  border-radius: 50px;
 }
 .search-box h1 {
   color: white;
@@ -60,27 +60,57 @@ color:  yellow !important;
 
 }
 
-.home-nav {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  padding: 25px;
-  text-decoration: none;
+.home-page-input {
+  width: 350px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  padding-left: 15px;
+  font-weight: bold;
 }
 
-.home-nav a {
+.home-nav {
+  font-family: roboto;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  text-decoration: none;
+  padding: 18px;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+}
+
+a {
   padding: 20px;
+  margin: auto;
+  color: white;
 }
 .home-nav :hover {
   text-decoration: none;
   transform: scale(1.1);
+  text-shadow: 5ex;
+  color: white;
+}
+
+.burger-animation {
+  padding-top: 0;
+}
+
+.burger-button {
+  display: flex;
+  /* justify-content: flex-start; */
+  background-repeat: no-repeat;
+  float: left;
+  object-fit: contain;
+  height: 60px;
+  width: 60px;
+  align-items: flex-start;
 }
 
 .nav-links {
   text-emphasis-color: white;
+  /* padding-bottom: 20%; */
 }
 
 /* //CSS for About Us// */
@@ -168,10 +198,38 @@ color:  yellow !important;
   text-align: left;
   padding-left: 70px;
   padding-right: 70px;
+  padding-bottom: 60px;
 }
 
 .why-munchies {
   padding: 10px;
 }
 
+.filters{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  font-family: roboto;
+
+
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  margin-right: 10px;
+}
+
+.place-search {
+  margin-left: 5px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1.4px solid #cccccc;
+}
+/* .search-name-location {
+
+} */
 /* END DEMO */

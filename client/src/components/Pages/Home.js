@@ -22,11 +22,10 @@ const Home = () => {
             <div className="home-search-box">
               <label className="home-page-label" htmlFor="home-search-id">
                 <input
-                  id="search-box-id"
                   className="home-page-input"
                   name="query"
                   type="text"
-                  placeholder="Search a location.."
+                  placeholder="  Search here..."
                   spellCheck="false"
                   autoComplete="off"
                   onChange={handleInputChange}
