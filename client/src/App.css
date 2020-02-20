@@ -1,13 +1,21 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
-
+body,
+html {
+  font-family: Arial;
+  font-size: 11.5pt;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-attachment: fixed;
+}
 #background-img {
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
   background-size: cover;
   background-image: url(./components/images/home.jpg);
+  background-attachment: fixed;
 }
-
 #header-home1 {
   font-family: didact + gothic;
   font-size: 60px;
@@ -16,7 +24,6 @@
   margin-bottom: 5px;
   padding: 20px;
 }
-
 #header-home2 {
   font-family: galada;
   font-size: 140px;
@@ -25,7 +32,6 @@
   opacity: 100%;
   letter-spacing: 6px;
 }
-
 #header-box {
   background: rgba(0, 0, 0, 0.55);
   color: white;
@@ -34,14 +40,7 @@
   left: 0;
   right: 0;
   width: 100vw;
-  /* width: 100%; */
 }
-
-/* .search-wrapper {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-} */
 .search-box {
   display: flex;
   justify-content: center;
@@ -54,12 +53,6 @@
 .search-box h1 {
   color: white;
 }
-.is-active{
-
-color:  yellow !important; 
-
-}
-
 .home-page-input {
   width: 350px;
   height: 50px;
@@ -68,7 +61,6 @@ color:  yellow !important;
   padding-left: 15px;
   font-weight: bold;
 }
-
 .home-nav {
   font-family: roboto;
   display: flex;
@@ -79,8 +71,8 @@ color:  yellow !important;
   text-decoration: none;
   color: white;
   align-items: center;
+  background-attachment: fixed;
 }
-
 a {
   padding: 20px;
   margin: auto;
@@ -92,14 +84,11 @@ a {
   text-shadow: 5ex;
   color: white;
 }
-
 .burger-animation {
   padding-top: 0;
 }
-
 .burger-button {
   display: flex;
-  /* justify-content: flex-start; */
   background-repeat: no-repeat;
   float: left;
   object-fit: contain;
@@ -107,27 +96,16 @@ a {
   width: 60px;
   align-items: flex-start;
 }
-
 .nav-links {
   text-emphasis-color: white;
-  /* padding-bottom: 20%; */
-/* This is just a sample change to Green. */
 }
-
-#home-nav a {
-  padding: 20px;
-  color:white;
-}
-
 /* //CSS for About Us// */
-
 .about-us-banner {
   background-image: url('./components/images/sushi-full-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 150px;
 }
-
 .team-munchies {
   grid-row: 1000px;
   width: 60%;
@@ -139,11 +117,9 @@ a {
   position: relative;
   bottom: 65px;
 }
-
 .our-names {
   font-family: didact + gothic;
   font-size: 20px;
-  /* margin: none; */
 }
 .flex-picture-names {
   display: flex;
@@ -153,20 +129,16 @@ a {
   height: auto;
   width: auto;
 }
-
 .profile-block {
   object-fit: contain;
 }
-
 .inner-flex {
   text-align: center;
 }
-
 .our-names {
   text-align: center;
 }
 .about-pic {
-  /* margin: 10px; */
   height: 150px;
   width: 150px;
   object-fit: cover;
@@ -174,7 +146,6 @@ a {
   border-radius: 360%;
   border: 3px solid black;
 }
-
 .about-pic:hover {
   opacity: 75%;
   transform: scale(1.1);
@@ -199,43 +170,34 @@ a {
   opacity: 75%;
   transform: scale(1.1);
 }
-
 .about-paragraph {
   text-align: left;
   padding-left: 70px;
   padding-right: 70px;
   padding-bottom: 60px;
 }
-
 .why-munchies {
   padding: 10px;
 }
-
-.filters{
+.filters {
   display: flex;
   justify-content: center;
   margin: 20px 0;
   font-family: roboto;
-
-
 }
-
 .options {
   display: flex;
   justify-content: center;
 }
-
 select {
   margin-right: 10px;
 }
-
 .place-search {
   margin-left: 5px;
   width: 250px;
   border-radius: 5px;
   border: 1.4px solid #cccccc;
 }
-/* .search-name-location {
-
-} */
-/* END DEMO */
+.is-active {
+  color: yellow !important;
+}
