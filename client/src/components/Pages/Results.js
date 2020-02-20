@@ -1,7 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useRouter } from '../../custom_hooks';
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import CardColumns from 'react-bootstrap/CardColumns';
+import CardDeck from 'react-bootstrap/CardDeck';
+import Col from 'react-bootstrap/Col';
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
+import logo from '../images/perfect-burger.png'
+
 
 /*****************************
  CONSTANTS
@@ -27,7 +38,6 @@ const Results = () => {
     IF THERE IS A VALUE WE UPDATE THE FILTER WTH A NEW VALUE WHILE MAINTAINING ALL THE OLD VALUES
     ***********************************************************************************************/
     if (value) return setFilters({ ...filters, [filterType]: value });
-
     /*******************************************************************************
      IF THERE IS NO VALUE WE REMOVE THAT KEY FROM THE FILTER STATE AND UPDATE STATE
      *******************************************************************************/
@@ -54,7 +64,6 @@ const Results = () => {
        *******************************************************************************/
       const filterValue = filters[key];
       const venueValue = venue[key];
-
       /**************************************************************
        FILTER MAP TO PERFORME UNIQUE COMPARISON BASED ON FILTER TYPE
        **************************************************************/
@@ -65,7 +74,6 @@ const Results = () => {
         price: (venueValue, filterValue) => filterValue === venueValue
       }[key](venueValue, filterValue); // returns either true or false
     });
-
   /********************************************
    A HOOK THAT RUNS WHEN THE COMPONENT MOUNTS
    ********************************************/
@@ -96,43 +104,70 @@ const Results = () => {
             ))}
           </select>
           <input
-            onChange={handleChangeFilter('categories')}
-            placeholder="Search by category"
+            onChange={handleChangeFilter('alias')}
+            placeholder="Search by name or location"
           />
         </div>
         {/* ternary to show the loader or venues based on loading state */}
         {loading ? (
-          <><h1>loading</h1></>
+          <img src={logo} alt="logo" />
         ) : (
           <div className="restaurantslist">
-            {venues.reduce((acc, venue) => {
-              const filterKeys = Object.keys(filters); // returns array of keys i,e ['alias', 'price' ,'rating']
-              if (filterKeys.length) {
-                // determine if there is at least one filter active
-                const isValid = checkFilters(filterKeys, venue); //if there is an active filter then we run our checkFilter
-                if (!isValid) return acc; // if it does not pass the check we stop the function by return the acc array
-              }
-              //if it passes validation or there were no filter at all we append to our acc
-              acc.push(
-                <Link to={`/restaurant/${venue.id}`} key={venue.id}>
-                  <div>
-                    <div className="main-result">
-                      <div className="results">
-                        <h3>{venue.name}</h3>
-                        <p>{venue.location.display_address.join(' ')}</p>
-                        <img
-                          className="result-images"
+            <CardDeck style={{justifyContent: 'center'}}>
+              {venues.reduce((acc, venue) => {
+                const filterKeys = Object.keys(filters); // returns array of keys i,e ['alias', 'price' ,'rating']
+                if (filterKeys.length) {
+                  // determine if there is at least one filter active
+                  const isValid = checkFilters(filterKeys, venue); //if there is an active filter then we run our checkFilter
+                  if (!isValid) return acc; // if it does not pass the check we stop the function by return the acc array
+                }
+                //if it passes validation or there were no filter at all we append to our acc
+                acc.push(
+                  <Link to={`/restaurant/${venue.id}`} key={venue.id}>
+                    <Card
+                      as="ul"
+                      border="primary"
+                      bg="dark"
+                      text="white"
+                      style={{ width: '25rem', height: '25rem', margin: 10, padding: 20,  justifyContent: 'center', backgroundPosition: 'center' }}
+                    >
+                      <Card.Title><h3>{venue.name}</h3></Card.Title>
+                      <Card.Subtitle>
+                    
+                        <Rater rating={venue.rating} onRating={venue.rating}/>
+                        {venue.rating}
+                        
+                     
+                        </Card.Subtitle>
+                      {/*
+
+                      <Card.Img variant="top" 
                           src={venue.image_url}
-                          alt={venue.name}
-                        />
-                        <h4>{venue.price || 'Price Not Available'}</h4>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-              return acc;
-            }, [])}
+                        alt={venue.name}/>*/}
+
+                      <div
+                        className="card-image"
+                        style={{
+                          backgroundImage: `url(${venue.image_url})`,
+                          backgroundPosition: 'center',
+                          backgroundSize: 'cover',
+                          width: '100%',
+                          height: '12rem'
+                        }}
+                      ></div>
+
+                      <Card.Body>
+                        <Card.Title>
+                          {venue.location.display_address.join(' ')}
+                        </Card.Title>
+                        <Button variant="primary">Restaurant Details</Button>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                );
+                return acc;
+              }, [])}
+            </CardDeck>
           </div>
         )}
       </React.Fragment>
