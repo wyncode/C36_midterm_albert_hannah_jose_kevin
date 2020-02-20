@@ -16,11 +16,15 @@ The results page will then display the nearby restaurants along with a restauran
 On clicking the restaurant, it will navigate to the details page and show all the relevant information business information. 
 
 The code is organized into the following structure: 
-Src  – This folder contains components, fonts, images, and CSS styles used within the application.
-pages –  This folder contains all of our JavaScript resources and libraries used within the application.
+Client folder holds all React files.
+Components hold our source code files for fonts, images, and CSS styles used within the application. 
+package.json folder holds all dependencies and script files.
 
 Tech stack used:
 Written in modern React, only functional components with hooks.
+We brought in axios 
+We also used express
+React Router
 The Yelp Fusion API. 
 The Yelp Fusion Developer Portal which includes tools & documentation for building with the Yelp Fusion API, and partner integration examples to inspire developers.
 We used React-Bootstrap for the styling.
