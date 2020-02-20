@@ -29,7 +29,6 @@ html {
   font-size: 140px;
   color: white;
   text-align: center;
-  opacity: 100%;
   letter-spacing: 6px;
 }
 #header-box {
@@ -147,7 +146,7 @@ a {
   border: 3px solid black;
 }
 .about-pic:hover {
-  opacity: 75%;
+  opacity: 0.7;
   transform: scale(1.1);
 }
 .linkedin-logo {
@@ -156,7 +155,7 @@ a {
   padding: 3px;
 }
 .linkedin-logo:hover {
-  opacity: 75%;
+  opacity: 0.7;
   transform: scale(1.1);
 }
 .github-logo {
@@ -167,7 +166,7 @@ a {
   margin-top: 5.5px;
 }
 .github-logo:hover {
-  opacity: 75%;
+  opacity: 0.7;
   transform: scale(1.1);
 }
 .about-paragraph {
