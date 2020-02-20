@@ -52,6 +52,7 @@ const Results = () => {
     if (!location) return;
     const url = `/api/restaurants/search/${location}`;
     axios.get(url).then(response => {
+      console.log('res', response);
       setVenues(response.data);
       setLoading(false);
     });
@@ -87,6 +88,8 @@ const Results = () => {
         {/* rendering the fliters */}
         <div className="filters">
           <h3>Filters</h3>
+        </div>
+        <div className="options">
           <select onChange={handleChangeFilter('price')}>
             <option value="" selected>price</option>
             {prices.map((price, index) => (
@@ -104,6 +107,7 @@ const Results = () => {
             ))}
           </select>
           <input
+            className="place-search"
             onChange={handleChangeFilter('alias')}
             placeholder="Search by name or location"
           />
